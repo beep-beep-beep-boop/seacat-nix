@@ -1,6 +1,6 @@
 { config, lib, pkgs, modulesPath, ... }:
 {
-  imports = [ (modulesPath) + "/profiles/qemu-guest.nix" ];
+  imports = [ (modulesPath + "/profiles/qemu-guest.nix") ];
   
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";
