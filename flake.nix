@@ -12,12 +12,19 @@
     # Home manager
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    # comin (gitops thingie)
+    comin = {
+      url = "github:nlewo/comin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
     self,
     nixpkgs,
     home-manager,
+    comin,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -57,6 +64,19 @@
         modules = [
           # > Our main nixos configuration file <
           ./nixos/seacat-configuration.nix
+
+          comin.nixosModules.comin
+          ({...}: {
+            services.comin = {
+              enable = true;
+              remotes = [{
+                name = "origin";
+                url = "https://github.com/beep-beep-beep-boop/seacat-nix.git";
+                branches.main.name = "main";
+              }];
+            };
+          })
+
         ];
       };
 
