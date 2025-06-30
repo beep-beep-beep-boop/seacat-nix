@@ -29,8 +29,8 @@
     ./firewall.nix
 
     # enabled services
-    ./caddy.nix
-    ./icecast.nix
+    ./services/caddy.nix
+    ./services/icecast.nix
   ];
 
   nixpkgs = {
