@@ -27,6 +27,7 @@
     inputs.home-manager.nixosModules.home-manager
 
     ./firewall.nix
+    ./tailscale.nix
 
     # enabled services
     ./services/caddy.nix
