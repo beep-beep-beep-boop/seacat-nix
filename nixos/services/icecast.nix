@@ -22,7 +22,5 @@ in
         route /admin* {
             respond "Admin interface is disabled" 403
         }
-
-        encode * none
     '';
 }
