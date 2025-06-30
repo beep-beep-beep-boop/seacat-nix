@@ -9,6 +9,8 @@ in
         listen.address = "127.0.0.1";
         listen.port = icecastInternalPort;
         hostname = icecastHostname;
+        admin.user = "";
+        admin.password = "";
     };
 
     services.caddy.virtualHosts."${icecastHostname}".extraConfig = ''
