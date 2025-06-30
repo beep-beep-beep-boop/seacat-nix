@@ -31,7 +31,7 @@
 
     # enabled services
     ./services/caddy.nix
-    ./services/icecast.nix
+    #./services/icecast.nix
   ];
 
   nixpkgs = {
