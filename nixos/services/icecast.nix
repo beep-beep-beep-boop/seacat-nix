@@ -10,7 +10,7 @@ in
     };
 
     services.caddy.virtualHosts."iwanttolistentomusic.ilovelain.com".extraConfig = ''
-        reverse_proxy 127.0.0.1:${icecastInternalPort} {
+        reverse_proxy 127.0.0.1:${toString icecastInternalPort} {
             flush_interval -1
         }
 
