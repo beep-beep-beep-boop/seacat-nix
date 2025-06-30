@@ -8,9 +8,7 @@ in
         enable = true;
         listen.address = "127.0.0.1";
         listen.port = icecastInternalPort;
-        extraConf = ''
-            <hostname>meow</hostname>
-        '';
+        hostname = icecastHostname;
     };
 
     services.caddy.virtualHosts."${icecastHostname}".extraConfig = ''
