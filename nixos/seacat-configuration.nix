@@ -79,7 +79,7 @@
 
   networking.hostName = "seacat"; # Define your hostname.
 
-  networking.useDHCP = false; # because systemd networkd handles it.
+  #networking.useDHCP = false; # because systemd networkd handles it.
   systemd.network.enable = true;
   systemd.network.networks."30-wan" = {
     matchConfig.Name = "enp1s0"; # either ens3 or enp1s0, check 'ip addr'
