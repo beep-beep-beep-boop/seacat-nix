@@ -25,6 +25,12 @@
 
     # Import home-manager's NixOS module
     inputs.home-manager.nixosModules.home-manager
+
+    ./firewall.nix
+
+    # enabled services
+    ./caddy.nix
+    ./icecast.nix
   ];
 
   nixpkgs = {
@@ -135,7 +141,6 @@
       KbdInteractiveAuthentication = false;
     };
   };
-  networking.firewall.allowedTCPPorts = [ 22 ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
