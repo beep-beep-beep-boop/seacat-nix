@@ -79,19 +79,19 @@
 
   networking.hostName = "seacat"; # Define your hostname.
 
-  #networking.useDHCP = false; # because systemd networkd handles it.
-  systemd.network.enable = true;
-  systemd.network.networks."30-wan" = {
-    matchConfig.Name = "enp1s0"; # either ens3 or enp1s0, check 'ip addr'
-    networkConfig.DHCP = "ipv4";
-    address = [
-      # replace this subnet with the one assigned to your instance
-      "2a01:4f9:c012:4710::/64"
-    ];
-    routes = [
-      { Gateway = "fe80::1"; }
-    ];
-  };
+  networking.useDHCP = true; # because systemd networkd handles it.
+  #systemd.network.enable = true;
+  #systemd.network.networks."30-wan" = {
+  #  matchConfig.Name = "enp1s0"; # either ens3 or enp1s0, check 'ip addr'
+  #  networkConfig.DHCP = "ipv4";
+  #  address = [
+  #    # replace this subnet with the one assigned to your instance
+  #    "2a01:4f9:c012:4710::/64"
+  #  ];
+  #  routes = [
+  #    { Gateway = "fe80::1"; }
+  #  ];
+  #};
 
 
   # Set your time zone.
